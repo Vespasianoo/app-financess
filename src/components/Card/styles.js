@@ -24,6 +24,9 @@ export const Content = styled.div`
   flex-direction: column;
   gap: 0.8rem;
 
+  > span {
+    color: ${theme.colors.white};
+  }
   > span:last-child {
     font-size: 3.2rem;
     font-weight: 700;

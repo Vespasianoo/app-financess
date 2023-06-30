@@ -16,7 +16,7 @@ export default {
   },
   colors: {
     background: "#121214",
-    gren_500: "#0ae360",
+    green_500: "#0ae360",
     red_300: "#eb5b64",
     zinc_900: "#161618",
     zinc_800: "#242424",
