@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import theme from "../../styles/theme"
 
 export const Container = styled.div`
   display: flex;
@@ -9,7 +10,7 @@ export const Container = styled.div`
   height: 13rem;
 
   border-radius: 0.4rem;
-  border: 0.2rem solid #242424;
+  border: 0.2rem solid ${theme.colors.zinc_800};
   padding-inline: 3.2rem;
 
   > svg {
