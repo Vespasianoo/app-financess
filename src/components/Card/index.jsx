@@ -1,12 +1,13 @@
-import { Container, CardInfo } from "./styles"
+import * as S from "./styles"
+
 export function Card({ img, text, value }) {
   return (
-    <Container>
-      <img src={img} />
-      <CardInfo>
+    <S.Container>
+      {img}
+      <S.Content>
         <span>{text}</span>
-        <span>R${value}</span>
-      </CardInfo>
-    </Container>
+        <span>{value}</span>
+      </S.Content>
+    </S.Container>
   )
 }
