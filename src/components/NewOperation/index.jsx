@@ -2,6 +2,7 @@ import { useState } from "react"
 
 import { List } from "../List"
 import { Plus } from "lucide-react"
+
 import { Input } from "../Input"
 
 import * as S from "./styles"
@@ -13,9 +14,10 @@ export function NewOperation({
 }) {
   const [desc, setDesc] = useState("")
   const [amount, setAmount] = useState("")
-  const [isExpense, setExpense] = useState(false)
+  const [isExpense, setIsExpense] = useState(false)
 
   const generateID = () => Math.round(Math.random() * 1000)
+  console.log()
 
   const handleSave = () => {
     if (!desc || !amount) {
@@ -57,30 +59,31 @@ export function NewOperation({
           value={amount}
           onChange={e => setAmount(e.target.value)}
         />
-
-        <div>
+        <S.Radio>
           <input
             type="radio"
             name="tipo"
             id="entrada"
+            value="entrada"
             defaultChecked
-            onChange={() => setExpense(!isExpense)}
+            onChange={() => setIsExpense(!isExpense)}
           />
-          <label htmlFor="entrada">
-            <div>entrada</div>
+          <label htmlFor="entrada" className="entrada">
+            Entrada
           </label>
-        </div>
-        <div>
+        </S.Radio>
+        <S.Radio>
           <input
             type="radio"
             name="tipo"
             id="saida"
-            onChange={() => setExpense(!isExpense)}
+            value="saida"
+            onChange={() => setIsExpense(!isExpense)}
           />
-          <label htmlFor="saida">
-            <div>saida</div>
+          <label htmlFor="saida" className="saida">
+            Saida
           </label>
-        </div>
+        </S.Radio>
 
         <S.Button onClick={handleSave}>
           <Plus size={32} />

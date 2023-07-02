@@ -35,24 +35,8 @@ export const Button = styled.button`
     filter: brightness(0.9);
   }
 `
-export const InputGroup = styled.div`
-  label {
-    display: block;
-    background: red;
-    display: flex;
-    width: 68px;
-    height: 48px;
-    cursor: pointer;
-
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #d1d1d1;
-
-    font-size: 14px;
-    line-height: 28px;
-    /* or 200% */
-    letter-spacing: 0.25px;
-  }
+export const Radio = styled.div`
+  align-self: end;
   input {
     display: none;
     position: absolute;
@@ -60,12 +44,22 @@ export const InputGroup = styled.div`
     height: 0;
     width: 0;
   }
-  input[type="radio"]:checked + label {
-    border: 1px solid #4743e0;
-    box-shadow: 0px 0px 14px rgba(71, 67, 224, 0.2);
-    color: #4743e0;
-    font-size: 14px;
-    line-height: 28px;
-    letter-spacing: 0.25px;
+
+  > label {
+    width: 10rem;
+    height: 4.8rem;
+    border-radius: 0.4rem;
+    border: 0.2rem solid ${theme.colors.zinc_800};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ${theme.colors.white};
+  }
+
+  input:checked + label.entrada {
+    border: 0.2rem solid ${theme.colors.green_500};
+  }
+  input:checked + label.saida {
+    border: 0.2rem solid ${theme.colors.red_300};
   }
 `
