@@ -3,6 +3,7 @@ import { Container } from "./styles"
 import { Nav } from "../Nav"
 import { Header } from "../Header"
 import { NewOperation } from "../NewOperation"
+import { sum } from "../../utils/sum"
 
 export function Layout() {
   const data = localStorage.getItem("transactions")
@@ -16,14 +17,14 @@ export function Layout() {
   useEffect(() => {
     const amountExpense = transactionsList
       .filter(item => item.expense)
-      .map(transaction => Number(transaction.amount))
+      .map(transactions => Number(transactions.amount))
 
     const amountIncome = transactionsList
       .filter(item => !item.expense)
-      .map(transaction => Number(transaction.amount))
+      .map(transactions => Number(transactions.amount))
 
-    const expense = amountExpense.reduce((acc, cur) => acc + cur, 0).toFixed(2)
-    const income = amountIncome.reduce((acc, cur) => acc + cur, 0).toFixed(2)
+    const expense = sum(amountExpense)
+    const income = sum(amountIncome)
 
     const total = Math.abs(income - expense).toFixed(2)
 
