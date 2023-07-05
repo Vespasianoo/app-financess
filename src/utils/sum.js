@@ -4,5 +4,9 @@ export const sum = array => {
     sum += value
   }
 
-  return sum.toFixed(2)
+  return sum
+}
+
+export const convert = value => {
+  return value.toLocaleString("pt-br", { style: "currency", currency: "BRL" })
 }

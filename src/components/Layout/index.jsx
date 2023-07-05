@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react"
+
 import { Container } from "./styles"
+
 import { Nav } from "../Nav"
 import { Header } from "../Header"
 import { NewOperation } from "../NewOperation"
-import { sum } from "../../utils/sum"
+
+import { sum, convert } from "../../utils/sum"
 
 export function Layout() {
   const data = localStorage.getItem("transactions")
@@ -26,11 +29,11 @@ export function Layout() {
     const expense = sum(amountExpense)
     const income = sum(amountIncome)
 
-    const total = Math.abs(income - expense).toFixed(2)
+    const total = income - expense
 
-    setIncome(`R$ ${income}`)
-    setExpense(`R$ ${expense}`)
-    setTotal(`${Number(income) < Number(expense) ? "-" : ""}R$ ${total}`)
+    setIncome(convert(income))
+    setExpense(convert(expense))
+    setTotal(convert(total))
   }, [transactionsList])
 
   const handleAdd = transaction => {
