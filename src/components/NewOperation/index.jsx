@@ -4,6 +4,7 @@ import { List } from "../List"
 import { Plus } from "lucide-react"
 
 import { Input } from "../Input"
+import { BookMinus, Coins } from "lucide-react"
 
 import * as S from "./styles"
 
@@ -43,6 +44,7 @@ export function NewOperation({
     <>
       <S.Container>
         <Input
+          img={<BookMinus size={30} />}
           type="text"
           name="description"
           label="Descrição"
@@ -51,6 +53,7 @@ export function NewOperation({
           onChange={e => setDesc(e.target.value)}
         />
         <Input
+          img={<Coins size={30} />}
           type="number"
           name="value"
           label="Valor"

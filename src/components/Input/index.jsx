@@ -5,6 +5,7 @@ export function Input({
   type = "text",
   label,
   placeholder,
+  img,
 
   ...props
 }) {
@@ -12,13 +13,16 @@ export function Input({
   return (
     <S.Container>
       <S.Label htmlFor={inputId}>{label}</S.Label>
-      <S.Input
-        type={type}
-        name={name}
-        id={inputId}
-        placeholder={placeholder}
-        {...props}
-      />
+      <S.InputContainer>
+        {img}
+        <S.Input
+          type={type}
+          name={name}
+          id={inputId}
+          placeholder={placeholder}
+          {...props}
+        />
+      </S.InputContainer>
     </S.Container>
   )
 }

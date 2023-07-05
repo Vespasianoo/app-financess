@@ -18,6 +18,7 @@ export default {
     background: "#121214",
     green_500: "#0ae360",
     red_300: "#eb5b64",
+    zinc_100: "#505052",
     zinc_900: "#161618",
     zinc_800: "#242424",
     white: "#ffffff",

@@ -12,17 +12,31 @@ export const Label = styled.label`
   font-size: 1.8rem;
   font-weight: 700;
 `
-export const Input = styled.input`
-  padding: 1.6rem;
-  border-radius: 0.4rem;
+
+export const InputContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+  max-width: 29rem;
+  height: 4.8rem;
   border: 0.2rem solid ${theme.colors.zinc_800};
+  border-radius: 0.4rem;
+  padding-inline: 1.6rem;
+  > svg {
+    stroke: ${theme.colors.zinc_100};
+  }
+
+  &:focus-within {
+    outline: auto;
+  }
+`
+export const Input = styled.input`
   color: ${theme.colors.white};
   width: 100%;
-  max-width: 29rem;
-  width: 100%;
-  height: 4.8rem;
-
+  height: 100%;
   &::placeholder {
     color: ${theme.colors.white};
   }
+  padding-left: 0.8rem;
+  outline: none;
 `
