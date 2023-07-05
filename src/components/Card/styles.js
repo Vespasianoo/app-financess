@@ -18,6 +18,19 @@ export const Container = styled.div`
     height: 5.4rem;
     flex-shrink: 0;
   }
+
+  @media (max-width: 999px) {
+    padding-inline: 2.2rem;
+    gap: 1rem;
+    > svg {
+      width: 3.4rem;
+      height: 3.4rem;
+    }
+  }
+
+  @media (max-width: 776px) {
+    width: 100%;
+  }
 `
 export const Content = styled.div`
   display: flex;
@@ -30,5 +43,11 @@ export const Content = styled.div`
   > span:last-child {
     font-size: 3.2rem;
     font-weight: 700;
+  }
+
+  @media (max-width: 999px) {
+    > span:last-child {
+      font-size: 2.8rem;
+    }
   }
 `
