@@ -25,3 +25,21 @@ export const Amount = styled.span`
   color: ${props =>
     props.expense ? theme.colors.red_300 : theme.colors.green_500};
 `
+
+export const ContainerAmount = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+
+  > button {
+    width: fit-content;
+    display: grid;
+    place-items: center;
+    > svg {
+      cursor: pointer;
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+  }
+`

@@ -17,7 +17,6 @@ export function NewOperation({
   const [isExpense, setIsExpense] = useState(false)
 
   const generateID = () => Math.round(Math.random() * 1000)
-  console.log(isExpense)
 
   const handleSave = () => {
     if (!desc || !amount) {

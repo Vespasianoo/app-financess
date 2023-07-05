@@ -10,7 +10,7 @@ export function List({ itens, setItens }) {
     <S.Container>
       <S.List>
         {itens?.map((item, index) => (
-          <Transaction key={index} item={item} />
+          <Transaction key={index} item={item} onDelete={onDelete} />
         ))}
       </S.List>
     </S.Container>
