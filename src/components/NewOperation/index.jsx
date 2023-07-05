@@ -17,7 +17,7 @@ export function NewOperation({
   const [isExpense, setIsExpense] = useState(false)
 
   const generateID = () => Math.round(Math.random() * 1000)
-  console.log()
+  console.log(isExpense)
 
   const handleSave = () => {
     if (!desc || !amount) {
@@ -47,7 +47,7 @@ export function NewOperation({
           type="text"
           name="description"
           label="Descrição"
-          placeholder="Gastou com o que em?"
+          placeholder={isExpense ? "Gastou com o que em?" : "Ganhou com o que?"}
           value={desc}
           onChange={e => setDesc(e.target.value)}
         />
